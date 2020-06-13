@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+{# no arquivo layout.html eu tenho o conteúdo geral da página.
+Esse extends está extendendo o conteúdo dessa  página para a página de layout.#}
+
+{% set pageId = "page-search-results" %}
+{# Criei uma variável com o id da div desse pagina para subtituir o conteúdo em layout.html #}
+
+{#os blocos tem um name unic para enviar o conteúdo dessa paǵina para para a outra paǵina#}
+
+{% block title %}
+  <title>Ecoleta</title>
+{% endblock title %}
+
+{% block styles %}
+  <link rel="stylesheet" href="/styles/search-results.css">
+{% endblock styles %}
+
+{% block content %}
+  {#conteudo especifico dessa pagina#}
+  <div class="content">
+
+    {% include "parts/page-header.html" %}
+
+    <main>
+
+      {% if total > 0 %}
+    
+        <h4>
+          <strong>{{ total }} pontos</strong> encontrados
+        </h4>
+          
+        <div class="cards">
+
+          {% for place in places %}
+
+            <div class="card">
+              <img src="{{ place.image }}" alt="{{ place.nome }}">
+              <h1>{{ place.name }}</h1>
+              <h3>{{ place.items }}</h3>
+              <p>
+                {{ place.city }}, {{ place.state }}<br>
+                {{ place.address }}
+                <br>
+                {{ place.address2 }}
+              </p>
+            </div>
+          
+          {% endfor %}
+
+        </div>
+      
+      {% else %}
+
+        <h4>
+          <strong>Nenhum</strong> local encontrado
+        </h4>
+  
+      {% endif %}
+
+    </main>
+
+  </div>
+{% endblock content %}

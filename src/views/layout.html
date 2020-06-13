@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoleta</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/main.css">
+    
+    {% block styles %}
+      {# trás o conteudo desse bloco com mesmo nome de uma página extends,
+    que nesse caso está no index.html #}
+    {% endblock styles %}
+   
+    <link rel="stylesheet" href="/styles/responsive.css">
+
+   
+
+  </head>
+  <body>
+
+    {#usando a variável para definir o id page-home ou o das outras paǵinas com divs
+    e trazer o conteúdo especifico das divs de cada páginas do meu html#}
+    <div id="{{pageId}}">
+      {% block content %}
+        {# trás o conteudo desse bloco com mesmo nome de uma página extends,
+      que nesse caso está no index.html #}
+      {% endblock content %}
+    </div>
+
+    {% block modal %}
+      {# Trazendo o conteúdo do include da parte do modal que está no index.html#}
+    {% endblock modal %}
+
+    {% block scripts %}
+      {# Trazendo o conteúdo do include da parte do scripts que está no index.html#}
+    {% endblock scripts %}
+
+  </body>
+</html>

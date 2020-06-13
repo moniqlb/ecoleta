@@ -1,0 +1,158 @@
+#page-create-point {
+  width: 90%; /*90% da tela*/
+  max-width: 1100px; /*porém não aumenta mais de 1100px*/
+  margin: 0 auto; /*margem de cima e de baixo é 0, mas as laterais são auto*/
+}
+
+#page-create-point header {
+  margin-top: 48px; /*margem superior de 40px*/
+  display: flex; /*deixa elementos inline*/
+  justify-content: space-between; /*espaço entre eles: cada um vai para uma ponta*/
+  align-items: center; /*alinhas os dois na mesma altura na linha X*/
+}
+
+#page-create-point header a {
+  color: var(--title-color);
+  font-weight: bold;
+
+  display: flex; /*inline com a seta*/
+  align-items: center; /*alinhados ao centro do eixo x*/
+
+}
+
+#page-create-point header a span {
+  margin-right: 14px; /*span tem margem de 16px*/
+  background-image: url('../assets/arrow-left.svg'); /*o elemento span criado, coloquei o icone de seta*/
+  display: flex; /*inline*/
+  width: 20px; /*aparecer*/
+  height: 24px; /*aparecer*/
+}
+
+form {
+  background-color: white; /*colocando o form com fundo brando*/
+  margin: 80px auto; /*margem de cima e de baixo em 80px e laterais automática, apenas do form*/
+  padding: 64px; /*espaçamento do preenchimento*/
+  border-radius: 8px; /*arredonando a borda do form*/
+  max-width: 730px; /*largura maxima em 730px*/
+
+} form h1 {
+  font-size: 36px; /*tamanho da fonte do h1*/
+}
+
+form fieldset {
+  margin-top: 64px; /*margem superior da primeira parte dos icons*/
+  border: 0; /*nenhuma borda*/
+}
+
+form legend {
+  margin-bottom: 40px; /*borda inferior de 40px no legend (Dados da entidade)*/
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+}
+
+form legend h2 {
+  font-size: 24px; /*tamanho da fonte do h2*/
+}
+
+form legend span{
+  font-size: 14px;
+  color: var(--title-color);
+}
+
+form .field {
+  flex: 1;
+  display: flex; /*colocar em linhas*/
+  flex-direction: column; /*colocar em colunas*/
+  margin-bottom: 24px; /*espaçar em 24px um campo do outro*/
+} 
+
+form .field-group {
+  display: flex;
+}
+
+form input, form select { /*para cada input*/
+  background-color: #f0f0f5; /*cor de fundo*/
+  border: 0; /*sem borda*/
+  padding: 16px 24px; /*pading 16px em cima e baixo e 24 pros lados*/
+  font-size: 16px; /*fonte dentro do campo*/
+  outline: none; /*tirar o destaque na caixa selecionada*/
+  border-radius: 8px;
+}
+
+form select {
+  -webkit-appearance: none; /*tira a setinha do select*/
+  -moz-appearance: none;
+  appearance: none;
+}
+
+form label { /*para cada label*/
+  font-size: 14px; /*tamanho 14px*/
+  margin-bottom: 8px; /*8px mais longe do input*/
+}
+
+form .field-group .field + .field { /*todo field que for seguido de outro field*/
+  margin-left: 24px;
+}
+
+form button {
+  width: 260px;
+  height: 56px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  margin-top: 40px;
+
+  transition: background-color 400ms;
+}
+
+form button:hover {
+  background-color: #2fb86b;
+}
+
+.items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+.items-grid li {
+  background-color: #f5f5f5; /*cor de fundo*/
+  list-style: none; /*tirei o marcador da lista "."*/
+  border: 2px solid #f5f5f5; /*borda de 2px solid e nessa cor*/
+  border-radius: 8px; /*arredondei as bordas em 8px*/
+  height: 180px; /*altura do item é 180px*/
+  padding: 32px 24px 16px; /*padding em cima, laterais e baixo*/
+
+  display: flex; /*alinhei elementos um ao lado do outro*/
+  flex-direction: column; /*dispus em colunas*/
+  align-items: center; /*coloquei os itens do li no centro*/
+  justify-content: space-between; /*e um espaço entre eles*/
+  text-align: center; /*coloquei os textos tbm no centro*/
+
+  cursor: pointer; /*ativei o cursos par mostrar como clicável*/
+}
+
+.items-grid li span {
+  margin-top: 12px;
+  flex: 1; /*preencheu espaço restante*/
+  display: flex; /*Deixei os elementos um ao lado do outro*/
+  align-items: center; /*alinhei ao centro*/
+  color: var(--title-color);
+}
+
+.items-grid li.selected {
+  background-color: #e1faec;
+  border: 2px solid #34cb79;
+}
+
+.items-grid li img,
+.items-grid li span {
+  pointer-events: none; /*desativei a opção de clicar nos itens, deixando apenas o li como um todo*/
+}
